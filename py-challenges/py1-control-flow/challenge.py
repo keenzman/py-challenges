@@ -17,7 +17,22 @@
 '''
 
 def createFullName():
-  firstName = "John";
-  lastName = "Smith";
+  firstName = "John"
+  lastName = "Smith"
   
   return (firstName + " " + lastName)
+
+def findLargestNumber():
+  largeNum1 = 1000
+  largeNum2 = 4000
+
+  if(largeNum1 > largeNum2):
+    return largeNum1
+  elif(largeNum2 > largeNum1):
+    return largeNum2
+  elif(largeNum1 == largeNum2):
+    return "They are equal"
+
+def sumNumbers(x, y):
+  
+  return x + y
