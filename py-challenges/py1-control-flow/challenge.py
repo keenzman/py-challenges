@@ -16,6 +16,9 @@
  * @returns {string} John Smith
 '''
 
+from typing import Counter
+
+
 def createFullName():
   firstName = "John"
   lastName = "Smith"
@@ -34,5 +37,10 @@ def findLargestNumber():
     return "They are equal"
 
 def sumNumbers(x, y):
-  
   return x + y
+
+def findLengthOfPassword(password):
+  counter = 0
+  for i in password:
+    counter += 1
+  return counter

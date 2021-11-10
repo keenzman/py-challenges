@@ -21,5 +21,12 @@ class ControlFlowTest(unittest.TestCase):
     self.assertEqual(challenge.sumNumbers(-1, 1), 0)
     self.assertEqual(challenge.sumNumbers(-1, -1), -2)
 
+  def test_findLengthOfPassword(self):
+    password1 = "thisIsMyVeryLongPassword123456789"
+    self.assertEqual(challenge.findLengthOfPassword(password1), 33)
+    
+    password2 = "password123"
+    self.assertEqual(challenge.findLengthOfPassword(password2), 11)
+
 if __name__ == '__main__':
   unittest.main()
