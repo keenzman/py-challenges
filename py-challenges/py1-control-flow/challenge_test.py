@@ -24,9 +24,30 @@ class ControlFlowTest(unittest.TestCase):
   def test_findLengthOfPassword(self):
     password1 = "thisIsMyVeryLongPassword123456789"
     self.assertEqual(challenge.findLengthOfPassword(password1), 33)
-    
+
     password2 = "password123"
     self.assertEqual(challenge.findLengthOfPassword(password2), 11)
+
+  def test_findType(self):
+    thing = "I am a thing"
+    message = "This is a string"
+    self.assertIn(challenge.findType(thing), message)
+
+    thing = 123
+    message = "This is a number"
+    self.assertIn(challenge.findType(thing), message)
+
+    thing = True
+    message = "This is a boolean"
+    self.assertIn(challenge.findType(thing), message)
+
+    thing = False
+    message = "This is a boolean"
+    self.assertIn(challenge.findType(thing), message)
+
+  def test_getIsValidOnNameTag(self):
+    result = challenge.getIsValidOnNameTag()
+    self.assertEqual(result, True)
 
 if __name__ == '__main__':
   unittest.main()
