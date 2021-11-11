@@ -24,7 +24,7 @@ def createFullName():
 '''
  # A function that programmatically returns the largest number.
  # This means if the numbers were different it would still return the largest one.
- # Should also check what happens when the numbers are equal
+ # Should return "They are equal" if the numbers are the same
  #
  # @returns {number} the largest number
 '''
