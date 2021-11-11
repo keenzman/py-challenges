@@ -10,25 +10,27 @@
 ''' Foundation Challenges '''
 
 '''
- * A function that programmatically concatenates two strings together with a space in between them.
- * This means if the string were different it would still add them together.
- *
- * @returns {string} John Smith
+ # A function that programmatically concatenates two strings together with a space in between them.
+ # This means if the string were different it would still add them together.
+ #
+ # @returns {string} John Smith
 '''
+firstName = "John"
+lastName = "Smith"
 
-from typing import Counter
-
-
-def createFullName():
-  firstName = "John"
-  lastName = "Smith"
-  
+def createFullName():  
   return (firstName + " " + lastName)
 
-def findLargestNumber():
-  largeNum1 = 1000
-  largeNum2 = 4000
+'''
+ # A function that programmatically returns the largest number.
+ # This means if the numbers were different it would still return the largest one.
+ #
+ # @returns {number} the largest number
+'''
+largeNum1 = 1000
+largeNum2 = 4000
 
+def findLargestNumber():
   if(largeNum1 > largeNum2):
     return largeNum1
   elif(largeNum2 > largeNum1):
@@ -38,6 +40,18 @@ def findLargestNumber():
 
 def sumNumbers(x, y):
   return x + y
+
+''' Intermediate Challenges '''
+
+'''
+ # A function to programmatically find the length of a string.
+ # This means if the string was different it would still find the length.
+ #
+ # BONUS: Try to solve this without using any built-in methods
+ #
+ # @returns {number} the length of the string
+'''
+password = "thisIsMyVeryLongPassword123456789";
 
 def findLengthOfPassword(password):
   counter = 0
