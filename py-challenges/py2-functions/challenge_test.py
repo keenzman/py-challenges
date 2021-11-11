@@ -25,5 +25,22 @@ class ControlFlowTest(unittest.TestCase):
     self.assertEqual(challenge.multiplyNumbers(-1, 5), -5)
     self.assertEqual(challenge.multiplyNumbers(-1, -10), 10)
 
+  def test_checkIfNewHighScore(self):
+    self.assertEqual(challenge.checkIfNewHighScore(600, 300), "You got a new high score!")  
+
+    score = 700
+    highScore = 700
+    self.assertEqual(score, highScore, "So close!")
+
+    self.assertEqual(challenge.checkIfNewHighScore(300, 600), "Better luck next Time")  
+
+  def test_celsiusToFahrenheit(self):
+    self.assertEqual(challenge.celsiusToFahrenheit(15), "15 degrees celsius is 59 degrees fahrenheit")
+    self.assertEqual(type(challenge.celsiusToFahrenheit(15)), str)
+
+  def test_calculateLifetimeSupply(self):
+    self.assertEqual(challenge.calculateLifetimeSupply(2, 25, 100), 54750)
+    self.assertEqual(challenge.calculateLifetimeSupply(3, 20, 90), 76650)
+
 if __name__ == '__main__':
   unittest.main()

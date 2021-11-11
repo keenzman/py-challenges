@@ -44,4 +44,50 @@ def findSmallestNumber(number1, number2):
  # @returns {number} 18
 '''
 def multiplyNumbers(number1, number2):
-  return number1*number2
+  return number1 * number2
+
+''' Intermediate Challenges '''
+
+'''
+ # A function that tells the user whether or not they've achieved a new high score.
+ # If they new score is larger than the current high score then return "You got a new high score!"
+ # If the scores are the same return "So close!"
+ # Otherwise return "Better luck next Time"
+ #
+ # @param {number} score 300
+ # @param {number} highScore 325
+ # @returns {string} "You got a new high score!" | "So close!" | "Better luck next time!"
+'''
+def checkIfNewHighScore(score, highScore):
+  if(score > highScore):
+    return "You got a new high score!"
+  elif(score == highScore):
+    return "So close!"
+  else:
+    return "Better luck next Time"
+
+'''
+ # A function that converts a temperature a in celsius to fahrenheit and outputs it in a string format -> "15 degrees celsius is 59 degrees fahrenheit".
+ #
+ # @param {number} tempInCelsius 15
+ # @returns {string} "15 degrees celsius is 59 degrees fahrenheit"
+'''
+def celsiusToFahrenheit(tempInCelsius):
+  tempInFahrenheit = (tempInCelsius * 9) // 5 + 32
+  temperatureString = f"{tempInCelsius} degrees celsius is {tempInFahrenheit} degrees fahrenheit"
+  return temperatureString
+
+'''
+ # A function that calculates the number of snickers needed for the rest of your life based on the number you eat per day,
+ # your age and your maximum age.
+ #
+ # @param {number} snickersPerDay 2
+ # @param {number} age 25
+ # @param {number} maxAge 100
+ # @returns {number} 54750
+'''
+def calculateLifetimeSupply(snickersPerDay, age, maxAge):
+  snickersPerYear = snickersPerDay * 365
+  yearsLeft = maxAge - age
+
+  return snickersPerYear * yearsLeft
