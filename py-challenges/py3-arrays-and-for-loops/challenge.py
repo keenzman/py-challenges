@@ -1,5 +1,5 @@
 '''
-  Py3 builds on the previous challenges and adds the use of Arrays, For Loops, Conditionals (If, else, switch)
+  Py3 builds on the previous challenges and adds the use of Arrays(Lists in Python), For Loops, Conditionals (If, else, switch)
   & calling your own functions.
 '''
 
@@ -46,3 +46,44 @@ def totalScores(scoreArr):
   for score in scoreArr:
     total += score
   return total
+
+''' Intermediate Challenges '''
+
+'''
+ # A function that takes an number and returns the total of the range of numbers between 0 and the given number.
+ # e.g. 10 => 0+1+2+3+4+5+6+7+8+9+10 = 55.
+ #
+ # @param {number} rangeMax 10
+ # @return {number} 55
+'''
+def totalRange(rangeMax):
+  total = 0
+  for num in range(rangeMax + 1):
+    total += num
+  return total
+
+'''
+ # A function that takes an array and returns a NEW ARRAY where the last item has been moved to the front of the array and removed from the back.
+ #
+ # @param {string[]} itemsArr ["Tony","John","Dave"]
+ # @return {string[]} ["Dave","Tony","John"]
+'''
+def moveFirstAndLastItems(itemsArr):
+  newArr = list(itemsArr)
+  removeLastItem = newArr.pop(-1)
+  newArr.insert(0, removeLastItem)
+  return newArr
+
+'''
+ # A function that takes an array of numbers and returns a NEW ARRAY with only the odd numbers from the given array. It should not mutate the input array.
+ #
+ # @param {number[]} numberArr [1,1,8,1,1,8]
+ # @return {number[]} [1,1,1,1]
+'''
+def generateAverage(numberArr):
+  newArr = numberArr.copy()
+
+  for number in newArr:
+    if (number % 2 == 0):
+      newArr.remove(number)
+  return newArr
