@@ -45,3 +45,43 @@ def createPercentageList(numbersArr):
 def createListOfPoessessions(possessionsArr, name):
   map_possessions = list(map(lambda possession: f'{name + " " + possession}', possessionsArr))
   return map_possessions
+
+''' Intermediate Challenges '''
+
+'''
+ # A function that takes a string of numbers joined with a "+" and returns an array of those numbers.
+ # The strings will need to be converted into numbers.
+ # e.g 1 instead of "1"
+ #
+ # @param {string} numberString - "1+2+3+4+5"
+ # @return {number[]} [1, 2, 3, 4, 5]
+'''
+def convertStringToNumbersArray(numberString):
+  splitList = numberString.split("+")
+  convertedNumList = ([int(num) for num in splitList])
+  return convertedNumList
+
+'''
+ # A function that takes a string of numbers joined with a "+" and creates a new array based on if the number is even or odd.
+ # Every number in the string will need to checked.
+ #
+ # @param {string} numberString - "1+2+3+4+5"
+ # @return {string[]} ['odd', 'even', 'odd', 'even', 'odd']
+'''
+def createOddEvenArray(numberString):
+  splitList = numberString.split("+")
+  convertedNumList = ([int(num) for num in splitList])
+  map_Nums = list(map(lambda num: f'even' if (num%2==0) else f'odd', convertedNumList))
+  return map_Nums
+
+'''
+ # A function that takes an array of book titles and a search term.
+ # The function needs fo remove any book titles that do not include the search term.
+ #
+ # @param {string[]} booksArr ["JavaScript: The Definitive Guide", "JavaScript: The Good Parts", "The Google story", "React for Dummies"]
+ # @param {string} - searchTerm - "Google"
+ # @return {string[]} - ["The Google story"]
+'''
+def filterBooksBySearch(booksArr, searchTerm):
+  filter_books = list(filter(lambda book: searchTerm in book, booksArr))
+  return filter_books

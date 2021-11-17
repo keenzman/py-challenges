@@ -26,6 +26,29 @@ class ControlFlowTest(unittest.TestCase):
     result = challenge.createListOfPoessessions(possessionsList, "disco")
     self.assertEqual(result, ["disco shoes","disco jacket","disco belt"])
 
+  def test_convertStringToNumbersArray(self):
+    numString = "1+2+3+4+5"
+    result = challenge.convertStringToNumbersArray(numString)
+    self.assertAlmostEqual(result, [1, 2, 3, 4, 5])
+
+  def test_createOddEvenArray(self):
+    numString = "1+2+3+4+5"
+    result = challenge.createOddEvenArray(numString)
+    self.assertAlmostEqual(result, ['odd', 'even', 'odd', 'even', 'odd'])
+
+  def test_filterBooksBySearch(self):
+    bookList = ["JavaScript: The Definitive Guide", "JavaScript: The Good Parts", "The Google story", "React for Dummies"]
+    searchTerm = "Google"
+    result = challenge.filterBooksBySearch(bookList, searchTerm)
+    self.assertAlmostEqual(result, ["The Google story"])
+
+    searchTerm2 = "JavaScript"
+    result = challenge.filterBooksBySearch(bookList, searchTerm2)
+    self.assertAlmostEqual(result, ["JavaScript: The Definitive Guide", "JavaScript: The Good Parts"])
+
+    searchTerm3 = "Python"
+    result = challenge.filterBooksBySearch(bookList, searchTerm3)
+    self.assertAlmostEqual(result, [])
 
 if __name__ == '__main__':
   unittest.main()
