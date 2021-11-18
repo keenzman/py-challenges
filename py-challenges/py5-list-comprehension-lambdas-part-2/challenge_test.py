@@ -30,6 +30,23 @@ class ControlFlowTest(unittest.TestCase):
     result = challenge.sortCharactersAlphabetically(charsArr)
     self.assertEqual(result, ["x"])
 
+  def test_sortNumbersHighToLow(self):
+    numArr = [6, 9, 55, 2, 9190, .5]
+    result = challenge.sortNumbersHighToLow(numArr)
+    self.assertEqual(result, [9190, 55, 9, 6, 2, 0.5])
+
+    numArr2 = [40]
+    result = challenge.sortNumbersHighToLow(numArr2)
+    self.assertEqual(result, [40])
+
+  def test_checkItemInstock(self):
+    toCheck = "apple"
+    result = challenge.checkItemInstock(toCheck)
+    self.assertEqual(result, f'{toCheck} is instock, it is on aisle 0')
+
+    toCheck2 = "pepper"
+    result = challenge.checkItemInstock(toCheck2)
+    self.assertEqual(result, f'Sorry {toCheck2} is not instock')
 
 if __name__ == '__main__':
   unittest.main()

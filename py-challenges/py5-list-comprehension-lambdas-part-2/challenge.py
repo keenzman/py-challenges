@@ -47,3 +47,51 @@ def reverseString(toReverse):
 def sortCharactersAlphabetically(charcterArr):
   lowerCaseList = map(lambda alphabet: alphabet.lower(), charcterArr)
   return sorted(lowerCaseList)
+
+''' Intermediate Challenges '''
+
+'''
+ # A function that arranges an array of numbers highest to the lowest number.
+ #
+ # @param {number[]} numberArr [6, 9, 55, 2, 9190, .5]
+ # @return {number[]} [9190, 55, 9, 6, 2, 0.5]
+'''
+def sortNumbersHighToLow(numberArr):
+  return sorted(numberArr, reverse=True)
+
+'''
+ # A function that checks if a given item is 'instock'.
+ # You have been given a 'stocklist' in the function body.
+ #
+ # If the item is in the stocklist you need to return its index in the following string format.
+ # "ITEM is instock, it is on aisle INDEX."
+ #
+ # If the item is not in the stocklist you need to return the following string format.
+ # "Sorry ITEM is not instock."
+ #
+ # @param {string} toCheck orange
+ # @return {string} "orange is instock, it is on aisle 2."
+''' 
+def checkItemInstock(toCheck):
+  stockList = [
+    "apple",
+    "banana",
+    "orange",
+    "coconut",
+    "strawberry",
+    "lime",
+    "grapefruit",
+    "lemon",
+    "kumquat",
+    "blueberry",
+    "melon",
+  ]
+
+  itemIndex = stockList.index(toCheck)
+  if (itemIndex >= 0):
+    message = f'{toCheck} is instock, it is on aisle {itemIndex}'
+    return message 
+  else:
+    return f'Sorry {toCheck} is not instock';
+  
+
