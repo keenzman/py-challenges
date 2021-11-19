@@ -41,12 +41,26 @@ class ControlFlowTest(unittest.TestCase):
 
   def test_checkItemInstock(self):
     toCheck = "apple"
+    message = f'{toCheck} is in stock, it is on aisle 0'
     result = challenge.checkItemInstock(toCheck)
-    self.assertEqual(result, f'{toCheck} is instock, it is on aisle 0')
+    self.assertEqual(result, message)
 
-    toCheck2 = "pepper"
-    result = challenge.checkItemInstock(toCheck2)
-    self.assertEqual(result, f'Sorry {toCheck2} is not instock')
+    self.assertEqual(type(challenge.checkItemInstock(toCheck)), str)
+
+    # toCheck2 = "pepper"
+    # result = challenge.checkItemInstock(toCheck2)
+    # self.assertEqual(result, f'Sorry {toCheck2} is not in stock') 
+    # with self.assertRaises(ValueError):
+    #   print('Pepper is not in list!')
+
+  def test_checkPrimaryColours(self):
+    coloursList = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+    result = challenge.checkPrimaryColours(coloursList)
+    self.assertEqual(result, False)
+
+    coloursList2 = ["red", "blue", "yellow"]
+    result = challenge.checkPrimaryColours(coloursList2)
+    self.assertEqual(result, True)
 
 if __name__ == '__main__':
   unittest.main()

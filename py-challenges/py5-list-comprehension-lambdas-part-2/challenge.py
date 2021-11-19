@@ -60,17 +60,17 @@ def sortNumbersHighToLow(numberArr):
   return sorted(numberArr, reverse=True)
 
 '''
- # A function that checks if a given item is 'instock'.
+ # A function that checks if a given item is 'in stock'.
  # You have been given a 'stocklist' in the function body.
  #
  # If the item is in the stocklist you need to return its index in the following string format.
- # "ITEM is instock, it is on aisle INDEX."
+ # "ITEM is in stock, it is on aisle INDEX."
  #
  # If the item is not in the stocklist you need to return the following string format.
- # "Sorry ITEM is not instock."
+ # "Sorry ITEM is not in stock."
  #
  # @param {string} toCheck orange
- # @return {string} "orange is instock, it is on aisle 2."
+ # @return {string} "orange is in stock, it is on aisle 2."
 ''' 
 def checkItemInstock(toCheck):
   stockList = [
@@ -87,11 +87,28 @@ def checkItemInstock(toCheck):
     "melon",
   ]
 
-  itemIndex = stockList.index(toCheck)
-  if (itemIndex >= 0):
-    message = f'{toCheck} is instock, it is on aisle {itemIndex}'
-    return message 
-  else:
-    return f'Sorry {toCheck} is not instock';
-  
+  message = f'Sorry {toCheck} is not in stock'
 
+  itemIndex = stockList.index(toCheck)
+  if (toCheck in stockList and itemIndex >= 0 ):
+    message = f'{toCheck} is in stock, it is on aisle {itemIndex}'
+    return message
+  else:
+    return message
+
+'''
+ # A function that takes an array of colours and checks if EVERY colour is a primary colour.
+ # The primary colours are ["red", "blue", "yellow"].
+ # It will return true if they are ALL primary.
+ # It will return false if they are NOT ALL primary.
+ #
+ # @param {string[]} coloursArr ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+ # @return {boolean} false
+'''
+def checkPrimaryColours(coloursArr):
+  primaryColours = ["red", "blue", "yellow"]
+  colourCheck = all(colour in primaryColours for colour in coloursArr)
+  if colourCheck:
+    return True
+  else:
+    return False
