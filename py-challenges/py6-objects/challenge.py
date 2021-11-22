@@ -7,21 +7,32 @@
   share it with the group!
 '''
 
-'''
- # A function that takes a furniture object from the catalogue and returns its price
- #
- # furniture = {
- #  name: "lack",
- #  price: 6
- # }
- #
- # @param {{name: string, price: number}} furniture - A piece of furniture from the catalogue
- # @return {number} The price of the piece of furniture
-'''
-class Catalogue:
-  def __init__(self, name, price):
+''' Foundation Challenges '''
+
+class Catalogue():
+  '''
+  # A function that takes a furniture object from the catalogue and returns its price
+  #
+  # @param {{name: string, price: number}} furniture - A piece of furniture from the catalogue
+  # @return {number} The price of the piece of furniture
+  '''
+  def getFurniturePrice(self, name, price):
     self.name = name
     self.price = price
+    return price
+  '''
+  # A function to attach to a store location to a furniture object from the catalogue
+  #
+  # @param {{name: string, price: number}} furniture - A piece of furniture from the catalogue
+  # @param {string} location - A store location to attach to a piece of furniture
+  # @returns {{name: string, price: number, location: string}} furniture - A furniture object from the catalogue
+  '''
+  def setFurnitureStoreLocation(self, name, price, location):
+    self.name = name
+    self.price = price
+    self.location = location
+    return location
 
-  def getFurniturePrice(furniture):
-    return furniture.price
+
+
+ 
