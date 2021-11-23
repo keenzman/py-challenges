@@ -13,6 +13,13 @@ class ControlFlowTest(unittest.TestCase):
     furniture = furnitureCatalogue.setFurnitureStoreLocation("Table", 6, "Cardiff")
     self.assertEqual(furniture, "Cardiff")
 
+  def test_Circle(self):
+    areaOfCircle = challenge.Circle(2).getArea()
+    self.assertEqual(areaOfCircle, 12.56)
+
+    circumferenceOfCircle = challenge.Circle(2).getCircumference()
+    self.assertEqual(circumferenceOfCircle, 12.56)
+
   def test_seating_capacity(self):
     School_bus = challenge.Bus("School Volvo", 180, 12)
     checkCapacity = School_bus.seating_capacity()

@@ -33,7 +33,22 @@ class Catalogue():
     self.location = location
     return location
 
+'''
+# Create a Cricle class and intialize it with radius. 
+# Make two methods getArea and getCircumference inside this class.
+# @param radius
+# @returns number
+'''
+class Circle():
+  def __init__(self,radius):
+    self.radius = radius
+  def  getArea(self):
+    return 3.14*self.radius*self.radius
+  def getCircumference(self):
+    return self.radius*2*3.14
+
 ''' Intermediate Challenges '''
+
 
 '''
 # Create a Bus class that inherits from the Vehicle class. 
