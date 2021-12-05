@@ -42,5 +42,16 @@ class ControlFlowTest(unittest.TestCase):
     self.assertEqual(challenge.calculateLifetimeSupply(2, 25, 100), 54750)
     self.assertEqual(challenge.calculateLifetimeSupply(3, 20, 90), 76650)
 
+  def test_getGrade(self):
+    self.assertEqual(challenge.getGrade(101), "Score unavailable")
+    self.assertEqual(challenge.getGrade(-10), "Score unavailable")
+    self.assertEqual(challenge.getGrade(85), "A")
+    self.assertEqual(challenge.getGrade(77), "B")
+    self.assertEqual(challenge.getGrade(63), "C")
+    self.assertEqual(challenge.getGrade(55), "D")
+    self.assertEqual(challenge.getGrade(42), "E")
+    self.assertEqual(challenge.getGrade(39), "F")
+    
+
 if __name__ == '__main__':
   unittest.main()

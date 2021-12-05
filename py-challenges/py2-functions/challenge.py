@@ -91,3 +91,37 @@ def calculateLifetimeSupply(snickersPerDay, age, maxAge):
   yearsLeft = maxAge - age
 
   return snickersPerYear * yearsLeft
+
+''' Advanced Challenges '''
+
+'''
+ # A function that takes a score input and returns a letter grade.
+ # If the score is:
+ #  100 - 80: "A"
+ #  79 - 70: "B"
+ #  79 - 60: "C"
+ #  59 - 50: "D"
+ #  49 - 40: "E"
+ #  39 - 0: "F"
+ # If the score is above 100, less than 0, or not a number it should return "Score unavailable"
+ #
+ # @param {number} score 0 - 100
+ # @returns {string} A - F | Score unavailable
+'''
+def getGrade(score):
+  if (score < 0 or score > 100 or type(score) != int):
+    return "Score unavailable"
+  
+  if (score >= 80):
+    return "A"
+  elif (score >= 70):
+    return "B"
+  elif (score >= 60):
+    return "C"
+  elif (score >= 50):
+    return "D"
+  elif (score >= 40):
+    return "E"
+  else:
+    return "F"
+

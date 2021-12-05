@@ -107,3 +107,46 @@ def getIsValidOnNameTag():
     return True
   else:
     return False
+
+''' Advanced Challenges '''
+
+'''
+ # A function that programmatically converts a number stored as a string to a number type.
+ # This means if the string was different it would still convert it to a number.
+ #
+ # @returns {number} The number converted from the string "32.87" -> 32.87
+'''
+stringToConvert = "15.45"
+
+def convertStringToNumber():
+  return float(stringToConvert)
+
+'''
+ # A function that uses regex to programmatically test if a string contains uppercase letters.
+ # This means if the string was different it would still accurately return true or false.
+ #
+ # !!NOTE!! You should use regex to solve this problem! (Check out module called 're')
+ #
+ # @returns {boolean} true || false
+'''
+import re
+
+stringWithUppercaseLetters = "I Am A String With Uppercase Letters"
+
+def getHasUppercaseLetters():
+  result = bool(re.match(r'\w*[A-Z]\w*', stringWithUppercaseLetters))
+  return result
+
+''' Expert Challenge '''
+
+'''
+ # A function that programmatically converts a string written in PascalCase to a string written in snake_case (lowercase with underscores).
+ # This means if the PascalCase string changes then the function should still convert it.
+ # (Might have to use re module again)
+ #
+ # @returns {string} i_want_to_be_snake_case
+'''
+pascalCaseVariableName = "IWantToBeSnakeCase"
+
+# def convertPascalCaseToSnakeCase():
+  

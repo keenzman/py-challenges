@@ -1,4 +1,5 @@
 import unittest
+from unittest import result
 import challenge
 
 class ControlFlowTest(unittest.TestCase):
@@ -47,6 +48,14 @@ class ControlFlowTest(unittest.TestCase):
 
   def test_getIsValidOnNameTag(self):
     result = challenge.getIsValidOnNameTag()
+    self.assertEqual(result, True)
+
+  def test_convertStringToNumber(self):
+    result = challenge.convertStringToNumber()
+    self.assertEqual(result, 15.45)
+
+  def test_getHasUppercaseLetters(self):
+    result = challenge.getHasUppercaseLetters()
     self.assertEqual(result, True)
 
 if __name__ == '__main__':
