@@ -58,5 +58,9 @@ class ControlFlowTest(unittest.TestCase):
     result = challenge.getHasUppercaseLetters()
     self.assertEqual(result, True)
 
+  def test_convertPascalCaseToSnakeCase(self):
+    result = challenge.convertPascalCaseToSnakeCase()
+    self.assertEqual(result, "i_want_to_be_snake_case")
+
 if __name__ == '__main__':
   unittest.main()

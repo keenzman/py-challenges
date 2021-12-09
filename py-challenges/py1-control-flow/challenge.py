@@ -143,10 +143,12 @@ def getHasUppercaseLetters():
  # A function that programmatically converts a string written in PascalCase to a string written in snake_case (lowercase with underscores).
  # This means if the PascalCase string changes then the function should still convert it.
  # (Might have to use re module again)
+ # !!NOTE!! You should use regex to solve this problem! (Check out module called 're')
  #
  # @returns {string} i_want_to_be_snake_case
 '''
 pascalCaseVariableName = "IWantToBeSnakeCase"
 
-# def convertPascalCaseToSnakeCase():
-  
+def convertPascalCaseToSnakeCase():
+  convertedName = re.sub(r'(?<!^)(?=[A-Z])', '_', pascalCaseVariableName).lower()
+  return convertedName
