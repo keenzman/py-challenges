@@ -80,10 +80,58 @@ def moveFirstAndLastItems(itemsArr):
  # @param {number[]} numberArr [1,1,8,1,1,8]
  # @return {number[]} [1,1,1,1]
 '''
-def generateAverage(numberArr):
+def removeEvenNumbers(numberArr):
   newArr = numberArr.copy()
 
   for number in newArr:
     if (number % 2 == 0):
       newArr.remove(number)
   return newArr
+
+''' Advanced Challenges '''
+
+'''
+ * A function that takes an array of numbers. It returns the average from the given array.
+ * The result should rounded up to the nearest decimal place.
+ *
+ * @param {number[]} numberArr [1,2,3]
+ * @return {number} 2
+'''
+def generateAverage(numberArr):
+  total = totalScores(numberArr)
+  average = total/len(numberArr)
+  return round(average);
+
+'''
+ * A function that reverses an array without using the built-in reversed().
+ *
+ * @param {number[]} toReverseArr [1,2,3]
+ * @return {number} [3,2,1]
+'''
+def reverseOrder(toReverseList):
+  return toReverseList[::-1]
+
+''' Expert Challenges '''
+
+'''
+ * Given two arrays, The first being an array of players and the second being there corresponding score. Loop through them and generate a new array matching the format below.
+ *
+ * ["P:INDEX PLAYER scored HIGHSCORE","P:INDEX PLAYER scored HIGHSCORE","P:INDEX PLAYER scored HIGHSCORE"]
+ *
+ * P:INDEX will start from 1. e.g P:1 not P:0
+ *
+ * If the inputs are not the same size or empty return "invalid inputs"
+ *
+ * @param {string[]} playersArr ["Tony","John","Dave"]
+ * @param {number[]} scoresArr [45,55,66]
+ * @return {string[]} ["P:1 Tony scored 45","P:2 John scored 55","P:3 Dave scored 66"]
+'''
+def generateHighscores(playersArr, scoresArr):
+  if (len(playersArr) != len(scoresArr) or not len(playersArr)): 
+    return "invalid inputs"    
+  scores = []
+  while(len(scores) != len(playersArr)):
+    index = len(scores)
+    message = f'P:{index + 1} {playersArr[index]} scored {scoresArr[index]}'
+    scores.append(message)
+  return scores
