@@ -62,5 +62,33 @@ class ControlFlowTest(unittest.TestCase):
     result = challenge.checkPrimaryColours(coloursList2)
     self.assertEqual(result, True)
 
+  def test_checkStringPalindrome(self):
+    string1 = "racecar"
+    result = challenge.checkStringPalindrome(string1)
+    self.assertEqual(result, "racecar")
+
+    string2 = "step on no pets"
+    result = challenge.checkStringPalindrome(string2)
+    self.assertEqual(result, "step on no pets")
+
+  def test_totalNestedScoresArr(self):
+    nestedScoreArr = [
+    [3, 2, 1],
+    [45, 6, 2],
+    [66, 88, 99, 100],
+    ]
+
+    totalScoreArr = [6, 53, 353]
+    result = challenge.totalNestedScoresArr(nestedScoreArr)
+    self.assertEqual(result, totalScoreArr)
+
+    nestedScoreArr2 = [[1, 2, 3]]
+    result = challenge.totalNestedScoresArr(nestedScoreArr2)
+    self.assertEqual(result, [6])
+
+    nestedScoreArr3 = [[1], [2], [3]]
+    result = challenge.totalNestedScoresArr(nestedScoreArr3)
+    self.assertEqual(result, [1, 2, 3])
+
 if __name__ == '__main__':
   unittest.main()

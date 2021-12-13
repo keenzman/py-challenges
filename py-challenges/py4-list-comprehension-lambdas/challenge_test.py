@@ -49,6 +49,11 @@ class ControlFlowTest(unittest.TestCase):
     searchTerm3 = "Python"
     result = challenge.filterBooksBySearch(bookList, searchTerm3)
     self.assertAlmostEqual(result, [])
+  
+  def test_formatStringArray(self):
+    stringList = ["  dIsco", " ShOes "]
+    result = challenge.formatStringArray(stringList)
+    self.assertEqual(result, "disco+shoes")
 
 if __name__ == '__main__':
   unittest.main()

@@ -112,3 +112,58 @@ def checkPrimaryColours(coloursArr):
     return True
   else:
     return False
+
+''' Advanced Challenges '''
+
+'''
+ * A function that takes a strings and checks to see if it is a palindrome.
+ * PALINDROME - a word, phrase, or sequence that reads the same backwards as forwards.
+ * It will return true or false depending if it is a palindrome or not.
+ *
+ * @param {string} stringOne racecar
+ * @return {boolean} true
+'''
+def checkStringPalindrome(stringOne):
+  reversedString = reverseString(stringOne)
+  if (reversedString == stringOne):
+    return reversedString
+
+'''
+ * A function that totals a nested array of scores arrays.
+ * It only needs to total each nested array.
+ * e.g. [[1, 2], [2, 3]] = [3, 5]
+ * The scores will be numbers.
+ *
+ * @param {number[]} numberArr [[7, 7, 6], [2, 3, 2], [3]]
+ * @return {number[]} [20, 7, 3]
+'''
+def totalNestedScoresArr(scoresArr):
+  score = [sum(x) for x in scoresArr]
+  return score
+
+''' Expert Challenge '''
+
+'''
+ * This is the same challenge as advanced JS4, can you implement it differently.
+ * Can you complete this challenge using the REDUCE iterator?
+ *
+ * A function that takes a string and creates a simple encrypted message.
+ *
+ * The string will be broken into 3 lists.
+ * The first three letters will go into their own list.
+ * The next three letters will follow this pattern.
+ * Joining the first three letters in each of their list.
+ * The rest of the letter's will follow this pattern.
+ * Each list will be joined together and returned as an encrypted message.
+ *
+ * The word "encrypted" would be broken into:
+ *
+ * e r t
+ * n y e
+ * c p d
+ *
+ * and joined together as ert + nye + cpd
+ *
+ * @param {string} toEncrypt "encrypted"
+ * @return {string} "ertnyecpd"
+'''

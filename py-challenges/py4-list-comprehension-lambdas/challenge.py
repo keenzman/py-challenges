@@ -85,3 +85,21 @@ def createOddEvenArray(numberString):
 def filterBooksBySearch(booksArr, searchTerm):
   filter_books = list(filter(lambda book: searchTerm in book, booksArr))
   return filter_books
+
+''' Advanced Challenges '''
+
+'''
+ * A function that takes a list, cleans each item and joins them with a +.
+ * When it "cleans" it remove's whitespace and makes sure the string is lowercase.
+ *
+ * This function is failing the test's can you figure out why?
+ * The bug is within the function, the test's are fine.
+ * Can you get it to pass the tests?
+ *
+ * @param {string[]} stringArr ["  dIsco", " ShOes "]
+ * @return {string} "disco+shoes"
+'''
+def formatStringArray(stringArr):
+  removeSpace = [stringArr.strip(' ').lower() for stringArr in stringArr]
+  joinWords = '+'.join(removeSpace)
+  return joinWords
