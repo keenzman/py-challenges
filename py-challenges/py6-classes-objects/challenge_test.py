@@ -25,8 +25,21 @@ class ControlFlowTest(unittest.TestCase):
     checkCapacity = School_bus.seating_capacity()
     self.assertEqual(checkCapacity, 'The seating capacity of a School Volvo is 50 passengers')
 
-  print()
+  def test_deposit(self):
+    bank_balance = challenge.BankAccount()
+    depositMoney = bank_balance.deposit(1000)
+    self.assertEqual(depositMoney, 1000)
+  
+  def test_withdraw(self):
+    bank_balance = challenge.BankAccount()
+    withdrawMoney = bank_balance.withdraw(100)
+    self.assertEqual(withdrawMoney, -100)
 
+    min_balance = 100
+    bank_balance = challenge.MinimumBalanceAccount(min_balance)
+    withdrawMoney = bank_balance.withdraw(100)
+    self.assertEqual(withdrawMoney, 'Sorry, minimum balance must be maintained.')
 
+  
 if __name__ == '__main__':
   unittest.main()

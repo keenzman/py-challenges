@@ -49,7 +49,6 @@ class Circle():
 
 ''' Intermediate Challenges '''
 
-
 '''
 # Create a Bus class that inherits from the Vehicle class. 
 # Give the capacity argument of Bus a default value of 50.
@@ -57,7 +56,6 @@ class Circle():
 # @param capacity
 # @returns string
 '''
-
 class Vehicle:
     def __init__(self, name, max_speed, mileage):
         self.name = name
@@ -71,6 +69,39 @@ class Bus(Vehicle):
     def seating_capacity(self, capacity=50):
         return super().seating_capacity(capacity=50)
 
+'''
+# Create a BankAccount class that shows the balance
+# Then create two methods called 'withdraw' and 'deposit'
+# Each method will have the following parameters and return:
+# @param amount
+# @return balance
+'''
+class BankAccount:
+    def __init__(self):
+        self.balance = 0
 
+    def withdraw(self, amount):
+        self.balance -= amount
+        return self.balance
 
- 
+    def deposit(self, amount):
+        self.balance += amount
+        return self.balance 
+
+''' Advanced Challenge '''
+
+'''
+# Use the BankAccount class above to account type where the account holder has to maintain a pre-determined 
+  minimum balance when withdrawing.
+# @param amount
+'''
+class MinimumBalanceAccount(BankAccount):
+    def __init__(self, minimum_balance):
+        BankAccount.__init__(self)
+        self.minimum_balance = minimum_balance
+
+    def withdraw(self, amount):
+        if self.balance - amount < self.minimum_balance:
+            return 'Sorry, minimum balance must be maintained.'
+        else:
+            return BankAccount.withdraw(self, amount)
