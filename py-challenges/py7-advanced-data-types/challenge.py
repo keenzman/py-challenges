@@ -17,3 +17,11 @@
 def identicalItems(set1, set2):
   identifyItems = set1.intersection(set2)
   return identifyItems
+
+'''
+  # Update set1 by adding items from set2, except common items
+  # @params {set1}, {set2}
+  # @returns {set}
+'''
+def updateSet(set1, set2):
+  return set1.symmetric_difference_update(set2)
